@@ -16,6 +16,7 @@ def addscore(score,name):
     # only store the top 10 scores in the table
     highscores = highscores[:10]
 
+# prints the table to standard output
 def drawtabletext():
     global highscores
     # print the table headings
@@ -24,16 +25,20 @@ def drawtabletext():
     for s in highscores:
         print("{0}\t{1}".format(s[0],s[1]))
 
+# prints the table in Pygame Zero
 def drawtablepygame():
     global highscores
+    # print the table headings
     screen.draw.text('Score', topleft=(50,50), fontsize=40)
     screen.draw.text('Name', topleft=(150,50), fontsize=40)
-    for p,h in enumerate(highscores):
-        screen.draw.text(str(h[0]), topleft=(50,100+(p*50)), fontsize=40)
-        screen.draw.text(h[1], topleft=(150,100+(p*50)), fontsize=40)
+    # using 'enumerate()' gives the position of each tuple in the table
+    # which is used to calculate the vertical position of the data
+    for pos,data in enumerate(highscores):
+        screen.draw.text(str(data[0]), topleft=(50,100+(pos*50)), fontsize=40)
+        screen.draw.text(data[1], topleft=(150,100+(pos*50)), fontsize=40)
 
-#def draw():
-#    drawtablepygame()
+def draw():
+    drawtablepygame()
 
 # use the 'addscore()' function to add some scores
 addscore(64,'Name 1')
