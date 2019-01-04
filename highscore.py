@@ -18,7 +18,6 @@ def addscore(score,name):
 
 # prints the table to standard output
 def drawtabletext():
-    global highscores
     # print the table headings
     print('Score\tName')
     # print each score and name pair in order
@@ -27,7 +26,6 @@ def drawtabletext():
 
 # prints the table in Pygame Zero
 def drawtablepygame():
-    global highscores
     # print the table headings
     screen.draw.text('Score', topleft=(50,50), fontsize=40)
     screen.draw.text('Name', topleft=(150,50), fontsize=40)
