@@ -1,8 +1,8 @@
 # highscore table is initially empty
 highscores = []
 
-#'addscore' function takes a score and a name, and
-#adds to the table in the correct position
+# 'addscore()' function takes a score and a name, and
+# adds to the table in the correct position
 def addscore(score,name):
     global highscores
     # starting at 0, increment the 'pos' variable
