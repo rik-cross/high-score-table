@@ -29,8 +29,8 @@ def drawtablepygame():
     # print the table headings
     screen.draw.text('Score', topleft=(50,50), fontsize=40)
     screen.draw.text('Name', topleft=(150,50), fontsize=40)
-    # using 'enumerate()' gives the position of each tuple in the table
-    # which is used to calculate the vertical position of the data
+    # using 'enumerate()' gives the position of each tuple in the list
+    # which is used to calculate the vertical draw position of the data
     for pos,data in enumerate(highscores):
         screen.draw.text(str(data[0]), topleft=(50,100+(pos*50)), fontsize=40)
         screen.draw.text(data[1], topleft=(150,100+(pos*50)), fontsize=40)
