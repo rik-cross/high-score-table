@@ -1,10 +1,16 @@
 # highscore table is initially empty
-highscores = []
+highscores = [(0,'Player') for i in range(10)]
 
 # 'addscore()' function takes a score and a name, and
 # adds to the table in the correct position
-def addscore(score,name):
+def addscore(score):
     global highscores
+    # only add the score if it is greater than the
+    # current lowest score in the highscores list
+    if score < highscores[9][0]:
+        return
+    # get the player's name
+    name = input('High score! What is your name? ')
     # starting at 0, increment the 'pos' variable
     # until it's at the position to insert the score
     pos = 0
@@ -39,9 +45,9 @@ def draw():
     drawtablepygame()
 
 # use the 'addscore()' function to add some scores
-addscore(64,'Name 1')
-addscore(30,'Name 2')
-addscore(87,'Name 3')
+addscore(64)
+addscore(30)
+addscore(87)
 
 # draw the populated table
 drawtabletext()
