@@ -1,8 +1,8 @@
-# highscore table is initially empty
+# highscore list is initially filled with low scores
 highscores = [(0,'Player') for i in range(10)]
 
 # 'addscore()' function takes a score and (if high enough)
-# adds to the table in the correct position, along with a name
+# adds to the list in the correct position, along with a name
 def addscore(score):
     global highscores
     # only add the score if it is greater than the
@@ -17,9 +17,9 @@ def addscore(score):
     while pos < len(highscores) and score <= highscores[pos][0]:
         pos += 1
     # add the (score, name) tuple
-    # at the correct place in the table
+    # at the correct place in the list
     highscores = highscores[:pos] + [(score,name)] + highscores[pos:]
-    # only store the top 10 scores in the table
+    # only store the top 10 scores in the list
     highscores = highscores[:10]
 
 # prints the table to standard output
@@ -49,5 +49,5 @@ addscore(64)
 addscore(30)
 addscore(87)
 
-# draw the populated table
+# print the populated table
 drawtabletext()
