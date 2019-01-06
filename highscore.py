@@ -1,8 +1,8 @@
 # highscore table is initially empty
 highscores = [(0,'Player') for i in range(10)]
 
-# 'addscore()' function takes a score and a name, and
-# adds to the table in the correct position
+# 'addscore()' function takes a score and (if high enough)
+# adds to the table in the correct position, along with a name
 def addscore(score):
     global highscores
     # only add the score if it is greater than the
